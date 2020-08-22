@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="resources/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <div class="primary-content container">
+        <header class="main-header text-center">
+          <p class="lead">Helping people in Essex to live well in later life.</p>
+        </header>
+        <div id="container" class="primary-content form-group">
+          <h2>Contact us</h2><br>
+          <form id="responderForm">
+            <div class="row">
+              <div class="col">
+                <input type="text" name="firstName" class="input-field form-control" name="firstName" placeholder="First Name:" required><br>
+              </div>
+                <div class="col">
+                  <input type="text" name="lastName" class="input-field form-control" name="lastName" placeholder="Last Name:" required><br>
+               </div>
+            </div>
+              <input type="email" name="email" class="input-field form-control" placeholder="Email:" required><br>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Enquiry options</label>
+              </div>
+                <select class="custom-select" id="service" required>
+                  <optgroup class="input-field form-control" label="My enquiry is about:">
+                    <option value="Choose" name="service" disabled selected>Please choose from the list below:</option>
+                    <option value="Home Help" name="service">Home Help</option>
+                    <option value="Befriending" name="service">Befriending</option>
+                    <option value="Information & Advice" name="service">Information &amp; Advice</option>
+                    <option value="Volunteering" name="service">Volunteering</option>
+                    <option value="Donations" name="service">Making a donation</option>
+                    <option value="Fundraising" name="service">Fundraising</option>
+                    <option value="Media" name="service">Media requests</option>
+                    <option value="Invoice Query" name="service">Making a payment</option>
+                  </optgroup>
+                  <optgroup class="input-field form-control" label="Your feedback:">
+                    <option value="compliment" name="feedback">Let us know how we are doing</option>
+                  </optgroup>
+                  <optgroup class="input-field form-control" label="Change how we contact you">
+                    <option value="Consent" name="gdprRights">Update your staying connected options</option>
+                  </optgroup>
+                  <optgroup class="input-field form-control" label="None of the above:">
+                    <option value="other" name="feedback">For any enquiries not listed above please specify below.</option>
+                  </optgroup><br>
+             </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Message options</label>
+          </div>
+            <select class="custom-select" id="message" required>
+              <option value="Choose" name="message" disabled selected>Please select type of message below:</option>
+              <option value=" General enquiry" name="message">General Enquiry</option>
+              <option value="Request for information" name="message">Request for information</option>
+              <option value="Donation enquiry" name="message">Donation Enquiry</option>
+              <option value="Invoice/Payments enquiry" name="message">Invoice/Payment Enquiry</option>
+              <option value="Feedback" name="message">Feedback</option>
+              <option value="Something else" name="message">Something else</option>
+            </select>
+          </div>
+          <textarea id="enquiry_form" class="text-input form-control" rows="10" cols="50" placeholder="Enter your message here" required></textarea><br><br>
+          <input type="submit" name="submit" value="SUBMIT" class="event input-field btn btn-outline btn-primary"><br><br>
+        </form>
+      </div>
+      <p class="lead">If you are interested in working for us, please click <a href="https://www.ageuk.org.uk/essex/about-us/work-for-us/" target="_blank">HERE:</a></p>
+      <footer class="main-footer text-center lead">
+        <address >
+          <p>Age UK Essex || Widford Hall || Widford Hall Lane || Off Tattersall Way || Chelmsford || Essex</p>
+          <telephone>Telephone: 01245 346106</telephone>
+          <p>&copy; All rights reserved to Age UK Essex</p>
+        </address>
+      </footer>
+      <script>
+        const myForm = document.querySelector('#responderForm');
+        console.log(myForm);
+        myForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        let myData = {
+        'first' : this.querySelector('input[name="firstName"]').value,
+        'last' : this.querySelector('input[name="lastName"]').value,
+        'email' : this.querySelector('input[name="email"]').value,
+        'service' : this.querySelector('select[id="service"]').value,
+        'enquiryType' : this.querySelector('select[id="message"]').value,
+        'enquiry': this.querySelector('textarea[id="enquiry_form"]').value
+        }
+
+        // google.script.run.withSuccessHandler(onSuccess).addData(myData);
+        console.dir(myData);
+
+        resetForm();
+
+        })
+
+        function onSuccess(data){
+          console.log(data);
+        }
+        function resetForm(){
+          document.getElementById('responderForm').reset();
+        }
+
+        function getRandom(){
+           return (new Date().getTime()).toString(36); // Converts number to String
+        }
+
+        function addData(data){
+          console.log(data);
+           var ss = SpreadsheetApp.openById('1EcjX0SjZpX7qRyDuNOKdiXovgrV3au_Z8WywPIo994Y'); // Opens required spreadhseet by ID
+           var sheet = ss.getSheetByName('Response'); // Picks up the responses sheet
+           var user = Session.getActiveUser().getEmail(); //
+           var createdDate = Date();
+           var newId = getRandom();
+           var holder = [data.first,data.last,data.email, createdDate, newId, data.service, data.enquiry, user, data.enquiryType];
+           sheet.appendRow(holder);
+           var services = [data.first, data.last,data.service, createdDate, newId, data.enquiry, user, data.enquiryType];
+           sendAnEmail(holder, services);
+          switch(data.service){
+            case 'Volunteering':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Home Help':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Befriending':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Information & Advice':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Donations':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Fundraising':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              case 'Media':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Invoice Query':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Compliment':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'Consent':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+              case 'other':
+              var mailAddress = 'andypaulstevens@gmail.com';
+              var userMessage = services[7]+'<h1>Message received from '+services[0]+' '+services[1]+'</h1><br><h4>Please see message below.</h4><br> <p>'+services[5]+'.</p> ';
+              MailApp.sendEmail(mailAddress, services[7]+ ' Message ID: '+services[4]+' Received from '+services[0]+ ' '+services[1]+' regarding '+services[2], ''+services[5]);
+              break;
+          }
+           return {
+            'trackingid':newId,
+            'status':true,
+            'added': holder
+          }
+
+          function sendAnEmail(holder, services){
+             var emailAddress = holder[2] || Session.getActiveUser().getEmail();
+             var message = '<h1>Thank you for your enquiry, '+holder[0]+'</h1><br><h4>Your message has been received successfully.</h4> <p> Your enquiry has been passed to the relevant team and we endeavour to respond to all enquiries within 24 hours Mon - Friday.</p> ';
+             MailApp.sendEmail(emailAddress, ""+holder[0]+" your Query ID: "+holder[4]+" has been received.", '',{
+              htmlBody:message,
+              name:'Age UK Essex - Thank you for your enquiry',
+            });
+          }
+         }
+     </script>
+   </div>
+  </body>
+</html>

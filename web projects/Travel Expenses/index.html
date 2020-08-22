@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container text-center">
+    <header>
+      <h1>Travel expenses claim form</h1>
+    </header>
+    <main>
+      <div class="container">
+        <form id="expensesForm">
+          <div class="form-group row">
+            <label align="left" for="claimDate" class="bold col-sm-2 col-form-label lead">Claim for month ended:</label>
+            <div class="col-sm-10">
+              <input type="month" align="middle" name="claimDate" placeholder="dd/mm/yy" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="fullname" class="bold col-sm-2 col-form-label lead">Name:</label>
+            <div class="col-sm-10">
+              <input type="text" align="middle" name="fullname" placeholder="Enter full name" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="mileage" class="bold col-sm-2 col-form-label lead">Return mileage home to base office:</label>
+            <div class="col-sm-10">
+              <input type="number" align="middle" name="mileage" placeholder="Enter mileage" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="registration" class="bold col-sm-2 col-form-label lead">Car registration:</label>
+            <div class="col-sm-10">
+              <input type="text" align="middle" name="registration" placeholder="Enter car registration" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="make" class="bold col-sm-2 col-form-label lead">Make of car:</label>
+            <div class="col-sm-10">
+              <input type="text" align="middle" name="make" placeholder="Enter make" class="content form-control">
+              <datalist id="careMake">
+
+              </datalist>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="engineSize" class="bold col-sm-2 col-form-label lead">Engine cc:</label>
+            <div class="col-sm-10">
+              <input type="number" step="0.1" align="middle" name="engineSize" placeholder="Enter engine size" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="date" class="bold col-sm-2 col-form-label lead">Date:</label>
+            <div class="col-sm-10">
+              <input type="date" align="middle" name="date" placeholder="Enter date" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="start_address" class="bold col-sm-2 col-form-label lead">Start Address:</label>
+            <div class="col-sm-10">
+              <input type="text" align="middle" name="start_address" placeholder="Enter start address (or postcode)" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="end_address" class="bold col-sm-2 col-form-label lead">End Address:</label>
+            <div class="col-sm-10">
+              <input type="text" align="middle" name="end_address" placeholder="Enter end address (or postcode)" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="miles" class="bold col-sm-2 col-form-label lead">Distance travelled:</label>
+            <div class="col-sm-10">
+              <input type="number" id="miles_claimed" align="middle" name="miles" placeholder="Miles travelled" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="travel_cost" class="bold col-sm-2 col-form-label lead">Travel cost:</label>
+            <div class="col-sm-10">
+              <input type="text" align="middle" id="cost" name="travel_cost" placeholder="£0.00" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="other_expenses" class="bold col-sm-2 col-form-label lead">Other expenses:</label>
+            <div class="col-sm-10">
+              <input type="text" align="middle" name="other_expenses" placeholder="Enter details of other expenses" class="content form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label align="left" for="service" class="bold col-sm-2 col-form-label lead">Service:</label>
+            <div class="col-sm-10">
+              <select align="middle" name="service" id="services" class="content form-control">
+                <optgroup></optgroup>
+              </select>
+            </div>
+          </div>
+          <input type="submit" name="submit" value="SUBMIT" class="event input-field btn btn-outline-primary ">
+          <label for="authorised" align="left" hidden>Authorised</label>
+          <input type="checkbox" name="authorised" value="AUTHORISED" class="" hidden>
+          <label for="unauthorised" align="left" hidden>Unauthorised</label>
+          <input type="checkbox" name="unauthorised" value="UNAUTHORISED" class="" hidden>
+          <input type="submit" name="submit" value="RESET" class="event input-field btn btn-outline btn-primary">
+        </form>      
+      </div>
+    </main>
+  </div>
+    <script src="resources/javascript/make.json"></script>
+    <script src="resources/javascript/expenses.js"></script>
+    <script>
+    </script>
+  </body>
+</html>

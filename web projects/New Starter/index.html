@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      .main-border {
+        padding-bottom: 15px;
+        border-bottom: 1px solid lightgray;
+      }
+      .main-content {
+        padding-top: 15px;
+      }
+
+      img {
+        float: left;
+        width: 150px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top" class="container-sm">
+      <header>
+        <img src="resources/images/aue-logo.png" class="rounded mx-auto d-block" alt="Age UK Essex Logo">
+        <h1 class="h1 text-center">New Starter requests</h1>
+      </header>
+      <p class="lead">Please use this form to request new accounts, hardware and telephony for new staff and volunteers</p><br>
+      <form action="https://ageukessexvols.secure.force.com/ISAccount/services/apexrest/WTA/webtoany" method="POST" id="newStarter" class="form-group main-border">
+        <input type=hidden name="oid" value="00Db0000000ayaCEAQ">
+        <input type=hidden name="pageToken" value="BPDGRxiHtRLMNciEOW0Qm7UZZ9OZRMPU1R32Z+/dq0gkID1patmU6+fQU1QPaS7Kf+tdGbJ/zBYKGxqx9SF+EWP1RepVadOnsoU7p0r+m2Q512V5Q7UeYoMnHVg+voQdVUn/H/DuV4LuW1sWyd0U/59kKYYrpdStkRiDG33RFqnHhaQi+X5+R4M+TI1WfpvBD1BLcWDtUl00Sy6LRZrG7Qu70P1XsDZYoKO0mpICgPX/GkRroJ3BluyrPGuj0RUHdAaxwTyJYfCSCm8kJWCIEqFyFeEQ5NC3RvR1ONOtugsPA00FEsZF6lx60giNwmwgzTJaFTcZxnDOS1JskhMTs8p8l7HJiRyBYvXpdxOEhgjX8PzI5VmHRGYioqWCioo5x2sDJk+T/Jcm/yBUc3fSHgOTzMF9VlUXiYz1O1r/NVU=">
+        <p class="lead">General Information<p><br>
+        <label class="sr-only" for="7tddakgFwNtM208/7enk7h+qeogXSCd84gDqAy9UAgpJd/oZCgTnOwg1pXcXKGSr">Email</label>
+        <input type="text" class="form-control" id="7tddakgFwNtM208/7enk7h+qeogXSCd84gDqAy9UAgpJd/oZCgTnOwg1pXcXKGSr" placeholder="Enter your email address:">
+        <div class="row">
+          <div class="col">
+            <label class="sr-only" for="E3t6y9KUkXG7ratFgSBNRTk1jKvNzaeKjFPS+xsUsDQ=">First Name</label>
+            <input type="text" class="form-control" id="E3t6y9KUkXG7ratFgSBNRTk1jKvNzaeKjFPS+xsUsDQ=" name="E3t6y9KUkXG7ratFgSBNRTk1jKvNzaeKjFPS+xsUsDQ=" placeholder="Enter new users first name:">
+          </div>
+            <div class="col">
+              <label class="sr-only" for="jYQeQi/fUfqPeINAOjsBiNTvjGNm8O9r+8WoS9V0DVg=">Last Name</label>
+              <input type="text" class="form-control" id="jYQeQi/fUfqPeINAOjsBiNTvjGNm8O9r+8WoS9V0DVg=" name="jYQeQi/fUfqPeINAOjsBiNTvjGNm8O9r+8WoS9V0DVg=" placeholder="Enter new users last name:">
+            </div>
+          </div><br>
+          <div class="form-row">
+            <div class="col-auto">
+              <p class="lead">Enter start date:</p>
+              <input type="date" id="4OwBt8bGJSAjFMXK5Ng4V9ZFSX8ULTPTTuf3puIipmM=" name="4OwBt8bGJSAjFMXK5Ng4V9ZFSX8ULTPTTuf3puIipmM=" class="form-control mb-2" value="Start date:">
+            </div>
+          </div>
+        </form>
+        <form>
+        <p class="lead">What service are they joining:</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="Ew6JlTSOI0zNUcBds7EyUJEdmJpwv4pMEu1kiIid/zE=">Options</label>
+          </div>
+            <select class="custom-select" id="Ew6JlTSOI0zNUcBds7EyUJEdmJpwv4pMEu1kiIid/zE=">
+              <option selected disabled>Choose one of the following options...</option>
+              <option value="befriending">Befriending</option>
+              <option value="finance">Finance</option>
+              <option value="homeHelp">Home Help</option>
+              <option value="humanResources">Human Resources</option>
+              <option value="informationAndAdvice">Infromation &amp; Advice</option>
+              <option value="advocacy">Advocacy</option>
+              <option value="informationTechnology">Information Technology</option>
+              <option value="managementServices">Management Services</option>
+              <option value="volunteering">Volunteering</option>
+             </select>
+        </div>
+        <p class="lead">Where will they be based:</p>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="jxdXp4uLW2+g55NPsOIqFgxWZq2ul18yqFDs8EolefQ=">Options</label>
+          </div>
+            <select class="custom-select" id="jxdXp4uLW2+g55NPsOIqFgxWZq2ul18yqFDs8EolefQ=">
+              <option selected disabled>Choose one of the following options...</option>
+              <option value="homeBased">Home Based</option>
+              <option value="widfordHall">Widford Hall</option>
+              <option value="northHub">North Hub</option>
+              <option value="southHub">South Hub</option>
+              <option value="midHub">Mid Hub</option>
+              <option value="thurrock">Thurrock</option>
+            </select>
+          </div>
+          <p class="lead">Please select if new starter is staff or volunteer:</p>
+          <div class="custom-control custom-checkbox form-check form-check-inline">
+            <input type="checkbox" class="custom-control-input" name="2mFOn2+BGJ7ZQwWCIpKcPNuad0nwAzeBsxIGqmRl/FU=" id="2mFOn2+BGJ7ZQwWCIpKcPNuad0nwAzeBsxIGqmRl/FU=">
+            <label class="custom-control-label" for="2mFOn2+BGJ7ZQwWCIpKcPNuad0nwAzeBsxIGqmRl/FU=">Staff:</label>
+          </div>
+           <div class="custom-control custom-checkbox form-check form-check-inline">
+            <input type="checkbox" class="custom-control-input" name="Jw/Jg4n0sf+hWnrxR6asJCR89lBBC4P7rVGielmeLxg=" id="Jw/Jg4n0sf+hWnrxR6asJCR89lBBC4P7rVGielmeLxg=">
+            <label class="custom-control-label" for="Jw/Jg4n0sf+hWnrxR6asJCR89lBBC4P7rVGielmeLxg=">Volunteer:</label>
+          </div><br>
+          <p class="lead">Please check all boxes that apply:</p>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="J7rc+nHWZQIV3cUgAN5G9LlSZoJEWiOYw27G/6tOfgvTjbWXV9kGhMzWM4lrspmq" id="J7rc+nHWZQIV3cUgAN5G9LlSZoJEWiOYw27G/6tOfgvTjbWXV9kGhMzWM4lrspmq">
+            <label class="custom-control-label" for="J7rc+nHWZQIV3cUgAN5G9LlSZoJEWiOYw27G/6tOfgvTjbWXV9kGhMzWM4lrspmq">Gmail:</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="rhZmnG529lHKC+wFDuPp5NrJvNQ5dYwpaIY0eim/XQHzDcO/gxhiomdfFjpwMm3T" id="rhZmnG529lHKC+wFDuPp5NrJvNQ5dYwpaIY0eim/XQHzDcO/gxhiomdfFjpwMm3T">
+            <label class="custom-control-label" for="rhZmnG529lHKC+wFDuPp5NrJvNQ5dYwpaIY0eim/XQHzDcO/gxhiomdfFjpwMm3T">Charitylog:</label>
+          </div>
+          <p class="lead">Details of existing Charitylog user whose profile is to be matched, in order to provide correct access for new starter:</p>
+          <input type="text" class="form-control mb-2" id="0jO9bLh2DGCgXrLKZXWhkyjYRnTV5DIqejE12BEG3HHefnJIi9utfITgpCK+hKtu" name="0jO9bLh2DGCgXrLKZXWhkyjYRnTV5DIqejE12BEG3HHefnJIi9utfITgpCK+hKtu" placeholder="Enter existing user's name"><br>
+          <div class="custom-control custom-checkbox main-border">
+            <input type="checkbox" class="custom-control-input" id="hvMrnVeneYWgbLKK5RqzIM8V8Lc2XYe0Igk69+jzXmQ=" name="hvMrnVeneYWgbLKK5RqzIM8V8Lc2XYe0Igk69+jzXmQ=">
+            <label class="custom-control-label" for="hvMrnVeneYWgbLKK5RqzIM8V8Lc2XYe0Igk69+jzXmQ=">Salesforce:</label>
+          </div>
+          <p class="lead main-content">Hardware</p>
+          <p class="lead">Please indicate if any new hardware is required.  Existing stock will be provided where possible:</p>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="zAlj3zdVrUcQ/zgynPYkIlDExmD0Nn4z4nRLGfEEtLlD3CBbp09TilZ/NRp/02Qh" name="zAlj3zdVrUcQ/zgynPYkIlDExmD0Nn4z4nRLGfEEtLlD3CBbp09TilZ/NRp/02Qh">
+            <label class="custom-control-label" for="zAlj3zdVrUcQ/zgynPYkIlDExmD0Nn4z4nRLGfEEtLlD3CBbp09TilZ/NRp/02Qh">Chromebook:</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="keyboardCheck">
+            <label class="custom-control-label" for="keyboardCheck">Keyboard:</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="mouseCheck">
+            <label class="custom-control-label" for="mouseCheck">Mouse:</label>
+          </div>
+          <div class="custom-control custom-checkbox main-border">
+            <input type="checkbox" class="custom-control-input" id="monitorCheck">
+            <label class="custom-control-label" for="monitorCheck">Monitor:</label>
+          </div>
+          <p class="lead main-content"> Mobile telephone </p>
+          <p class="lead">Please indicate if a mobile telephone is required</p>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="location">Options</label>
+          </div>
+            <select class="custom-select" id="location">
+              <option selected disabled>Choose one of the following options...</option>
+              <option value="basicMobile">Basic Mobile</option>
+              <option value="smartphone">Smartphone</option>
+            </select>
+          </div>
+          <div class="main-border main-content">
+            <p class="lead main-border">The following three sections are for allocating desk phones, you <strong>ONLY</strong> need to complete one section.</p>
+            <p class="lead main-content"><em>To reallocate an existing number to a new starter</em></p>
+            <label class="lead" for="existingNumber">Extension number to be re-allocated</label>
+            <input type="text" class="form-control" name="existingNumber" value="extensionNumber" placeholder="Enter existing extension number:">
+          </div>
+           <div class="custom-control custom-checkbox main-border main-content">
+            <input type="checkbox" class="custom-control-input" id="ipPhoneCheck">
+            <label class="custom-control-label lead" for="ipPhoneCheck">Is a desk phone required:</label>
+            <input type="text" class="form-control" placeholder="Please enter Hunt Group Main office number if required:" name="huntGroup">
+            <input type="checkbox" class="custom-control-input" id="voicemailCheck">
+            <label class="custom-control-label lead" for="voicemailCheck">Please indicate if voicemail is required:</label>
+          </div>
+           <div class="custom-control custom-checkbox main-content">
+           <p class="lead"> Existing Desk Phones</p>
+            <input type="text" class="custom-control-input" id="macId" placeholder="Please enter the MAC ID (found the base of the handset):">
+            <input type="text" class="form-control" placeholder="Please enter Hunt Group Main office number if required:" name="huntGroup">
+            <input type="checkbox" class="custom-control-input" id="voicemailCheck">
+            <label class="custom-control-label lead main-border" for="voicemailCheck">Please indicate if voicemail is required:</label>
+          </div>
+          <input type="submit" name="submit" value="SUBMIT NEW STARTER" class="event input-field btn btn-outline btn-primary">
+      </form>
+      <footer class="text-center lead">
+        <address>
+          <telephone>Telephone: <a href="tel:01245346106">01245 346106</a></telephone>
+          <p><a href="#top">&Hat; Back to top</a></p>
+          <p>&copy; All rights reserved to Age UK Essex</p>
+        </address>
+      </footer>
+    </div>
+  </body>
+</html>

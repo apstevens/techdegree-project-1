@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+  <html>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+<head>
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    /* Base Styles -------------------- */
+
+      h2 {
+        padding-top: 20px;
+      }
+      textarea {
+        outline: none;
+        resize: none;
+      }
+
+      /* Main Styles --------------------- */
+
+      .main-header {
+        margin: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .input-field {
+        padding-bottom: 25px;
+        border-bottom: 1px solid lightgray;
+      }
+    </style>
+</head>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+<body>
+  <div class="primary-content container">
+    <div id="container" class="primary-content form-group">
+      <h2 class="display text-center">Report a technical problem with IT</h2>
+    </div>
+    <form id="form" class="form-group" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+      <p id="error" class="lead" hidden>Please fill out all fields.</p>
+      <input type=hidden name="orgid" value="00D1t000000wIJi">
+      <input type=hidden name="retURL" value="https://sites.google.com/a/ageukessex.org.uk/iconnect/service-deck-thank-you?authuser=0">
+        <div class="form-group">
+          <label for="contactName" class="lead">Contact Name:</label>
+          <input  id="contactName" maxlength="80" class="form-control" name="contactName" size="20" type="text" placeholder="Please enter your full name here:" required />
+        </div>
+        <div class="form-group">
+          <label for="email" class="lead">Email:</label>
+          <input id="email" maxlength="80" name="email" class="form-control" size="20" type="email" placeholder="Enter your email address here:" required />
+        </div>
+        <div class="form-group input-field">
+          <label for="phone" class="lead">Phone number:</label>
+          <input id="phone" maxlength="80" name="phone" class="form-control" size="20" type="tel" placeholder="Enter your telephone number here:" required />
+        </div>
+        <p class="lead">Please select from the following list the basic cause (root cause) of your issue:</p>
+        <div class="form-group input-field">
+          <label for="00N1t00000KeWev" class="lead">Root cause:</label>
+          <select class="form-control" id="00N1t00000KeWev" name="00N1t00000KeWev" title="Root cause">
+            <option value="">--None--</option>
+            <option value="Change request">Change request</option>
+            <option value="System setup issue">System setup issue</option>
+            <option value="Development request">Development request</option>
+            <option value="Disaster Recovery (DR)">Disaster Recovery (DR)</option>
+            <option value="Duplicate case">Duplicate case</option>
+            <option value="EBM printers">EBM printers</option>
+            <option value="EBM Service monitoring">EBM Service monitoring</option>
+            <option value="GDPR - Data">GDPR - Data</option>
+            <option value="GDPR - Guidance">GDPR - Guidance</option>
+            <option value="Hardware issue">Hardware issue</option>
+            <option value="Hardware - New kit required">Hardware - New kit required</option>
+            <option value="HP Printer issue">HP Printer issue</option>
+            <option value="Information Only">Information Only</option>
+            <option value="Internet issues/outage (multiple sites)">Internet issues/outage (multiple sites)</option>
+            <option value="Internet issues/outage (one site)">Internet issues/outage (one site)</option>
+            <option value="Investigation">Investigation</option>
+            <option value="Mercury Maynard Service Monitoring">Mercury Maynard Service Monitoring</option>
+            <option value="Mobile phone related">Mobile phone related</option>
+            <option value="Non IT related issue">Non IT related issue</option>
+            <option value="No response">No response</option>
+            <option value="Password Reset">Password Reset</option>
+            <option value="Post upgrade UAT issues">Post upgrade UAT issues</option>
+            <option value="Premises move">Premises move</option>
+            <option value="Report writing &amp; design">Report writing &amp; design</option>
+            <option value="Security/back up alert">Security/back up alert</option>
+            <option value="Software issue">Software issue</option>
+            <option value="Starters, movers &amp; leavers">Starters, movers &amp; leavers</option>
+            <option value="Supplier alert">Supplier alert</option>
+            <option value="Telephony outage (Multiple sites)">Telephony outage (Multiple sites)</option>
+            <option value="Telephony outage (one site)">Telephony outage (one site)</option>
+            <option value="Training required">Training required</option>
+            <option value="Unable to replicate">Unable to replicate</option>
+            <option value="Unplanned development work - completed">Unplanned development work - completed</option>
+            <option value="Unplanned development work - ongoing">Unplanned development work - ongoing</option>
+            <option value="User error">User error</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="subject" class="lead">Subject:</label>
+          <input  id="subject" maxlength="80" class="form-control" name="subject" size="20" type="text" placeholder="Please enter subject here:" required />
+        </div>
+        <div class="form-group input-field">
+          <label for="description" class="lead">Description:</label>
+          <textarea class="form-control" id="description" name="description" rows="3" placeholder="Please enter details of your issue here:" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="priority" class="lead">Priority:</label>
+          <select  id="priority" class="form-control" name="priority">
+            <option value="">--None--</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div><br>
+        <input type="submit" class="btn btn-primary" name="submit">
+      </form>
+      <p id="thanks" class="lead" hidden>Your request has been submitted. We will endeavour to answer your query within 24 hours, thank you for your patience.</p>
+      <!--  ----------------------------------------------------------------------  -->
+      <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+      <!--  these lines if you wish to test in debug mode.                          -->
+      <!--  <input type="hidden" name="debug" value=1>                              -->
+      <!--  <input type="hidden" name="debugEmail"                                  -->
+      <!--  value="joolz.hitchcock@ageukessex.org.uk">                              -->
+      <!--  ----------------------------------------------------------------------  -->
+  </div>
+</body>
