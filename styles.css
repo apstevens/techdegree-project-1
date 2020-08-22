@@ -91,7 +91,7 @@ header .profile-image:hover {
 .card {
   margin: 30px;
   padding: 20px 40px 40px;
-  max-width: 500px;
+  max-width: 400px;
   text-align: left;
   background: #fff;
   border-bottom: 4px solid #ccc;
@@ -99,6 +99,17 @@ header .profile-image:hover {
   transition: all .5s;
 }
 .card:hover {
+  border-color: #ff99ff;
+}
+
+.background-image {
+  width: 300px;
+  border-radius: 6px;
+  border-bottom: 4px solid #ccc;
+  transition: all .5s;
+}
+
+.background-image:hover {
   border-color: #ff99ff;
 }
 
@@ -118,6 +129,14 @@ ul.skills {
 
 .skills li:nth-child(odd) {
   background: #0399ff;
+}
+
+.project_list a {
+  color: white;
+}
+
+.project_list a:hover {
+  color: black;
 }
 
 footer {
