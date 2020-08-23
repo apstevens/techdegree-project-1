@@ -57,7 +57,7 @@ a:hover {
 
 header {
   text-align: center;
-  background: url('images/Baxter\ Cornwall.JPG') no-repeat top center ;
+  background: url('images/space.jpg') no-repeat top center ;
   background-size: cover;
   overflow: hidden;
   padding-top: 60px;
@@ -137,6 +137,18 @@ ul.skills {
 
 .project_list a:hover {
   color: black;
+}
+
+.contact {
+  color: #0399ff;
+}
+
+.contact:hover {
+  border-radius: 6px;
+  background: #ff9904;
+  color: white;
+  padding: 5px 10px;
+  margin: 2px;
 }
 
 footer {
