@@ -10,28 +10,27 @@
 </head>
 
 <body>
+    <div class="header-image"></div>
 
     <div class="main-nav">
         <ul class="nav">
             <li class="name">Andy Stevens</li>
-            <li><a href="index.html" target="_blank">Home</a></li>
-            <li><a href="experience.html" target="_blank">Experience</a></li>
-            <li><a href="contact.html" target="_blank">Contact</a></li>
+            <li><a href="index.html" target="_self">Home</a></li>
+            <li><a href="experience.html" target="_self">Experience</a></li>
+            <li><a href="contact.html" target="_self">Contact</a></li>
         </ul>
     </div>
 
-    <header>
-        <img src="images/family_holiday.jpg" alt="Picture of Andy Stevens with his family on holiday"
-            class="profile-image">
+    <header id="top">
+        <img src="images/rsz_office_pic.jpg" alt="Picture of Andy Stevens" class="profile-image">
         <h1 class="tag name">Experience</h1>
-        <p class="tag location">Below I have listed my work experience, skills and provided links to projects I have
-            been involved in.</p>
+        <p class="tag location">Below I have listed my work experience, skills and provided links to projects I have been involved in.</p>
     </header>
 
     <main class="flex">
         <div class="card">
             <h2>Work Experience</h2>
-                    <ul class="skills">
+                    <ul class="work-experience">
                         <li>Implement new business IT strategies</li>
                         <li>Created a number of web applications</li>
                         <li>Employee telephone directory</li>
@@ -40,7 +39,7 @@
                         <li>Service request application</li>
                         <li>cleansed data prior to migration into Salesforce</li>
                         <li>Automated reports using Google Sheets</li>
-                        <li>Create internal procedural documentation and KPI</li>
+                        <li>Created internal procedural documentation and KPI</li>
                         <li>Talked staff through actions face to face, remotely or over the phone to help setup systems or resolve issues</li>
                         <li>Troubleshot system and network problems</li>
                         <li>Diagnosed hardware and software faults</li>
@@ -48,10 +47,10 @@
                         <li>Setup new users’ accounts and profiles and dealt with password issues</li>
                         <li>Responded within agreed Service Level Agreements to call outs</li>
                         <li>Handled administrative functions, user account maintenance, reports, dashboards, and workflows</li>
-                        <li>Complete regular internal system audits and prepare for upgrades</li>
-                        <li>Coordinate the evaluation, scope and completion of new development requests.</li>
-                        <li>Assist in training of new users</li>
-                        <li>Effectively act as the liaison between our users, vendors and the application development teams</li>
+                        <li>Completed regular internal system audits and prepared for upgrades</li>
+                        <li>Coordinated the evaluation, scope and completion of new development requests.</li>
+                        <li>Assisted in training of new users</li>
+                        <li>Acted as liaison between our users, vendors and the application development teams</li>
                         <li>Prioritised and managed many open cases at one time</li>
                         <li>Tested and evaluated new technology</li>
                     </ul>
@@ -76,6 +75,15 @@
                 <li>Node.js</li>
                 <li>Bootstrap</li>
                 <li>jQuery</li>
+            </ul>
+            <p>I am also familiar with a number of CRM platforms and CMS Systems</p>
+            <ul class="skills">
+                <li>Salesforce</li>
+                <li>Charitylog</li>
+                <li>Bluedoor</li>
+                <li>FAST</li>
+                <li>AWD</li>
+                <li>Wordpress</li>
             </ul>
             <p>Through out my career I have developed a number of transferrable skills</p>
             <ul class="skills">
@@ -103,20 +111,73 @@
 
         <div class="card">
             <h2>Projects</h2>
-            <p>Listed below are some of the projects I have been involved in, either commercially for Age UK Essex or
-                personally, whilst studying to improve my knowledge</p>
+            <p>Listed below are projects I have been involved in commercially, these were web applications developed using Google Apps Script.</p>
             <ul class="skills project_list">
-                <li><a href="web_projects/contact_form/index.html" target="_blank">Contact Form</a></li>
-                <li><a href="web_projects/firstReactElement/index.html" target="_blank">First
-                        React Element</a></li>
-                <li><a href="web_projects/it_service_desk/index.html" target="_blank">IT Service Desk</a></li>
-                <li><a href="web_projects/knowledge_base/index.html" target="_blank">Knowledge Base</a></li>
-                <li><a href="web_projects/new_starter/index.html" target="_blank">New Starter</a></li>
-                <li><a href="web_projects/Pets/index.html" target="_blank">Pet Directory</a></li>
-                <li><a href="web_projects/request_to_be_forgotten/index.html" target="_blank">Request to be forgotten</a></li>
-                <li><a href="web_projects/scoreboard/index.html" target="_blank">Scoreboard</a></li>
-                <li><a href="web_projects/travel_expenses/index.htmlweb_projects" target="_blank">Travel Expenses</a></li>
-                <li><a href="web_projects/lakeTahoe/index.html" target="_blank">Lake Tahoe</a></li>
+                <li>
+                    <a href="web_projects/contact_form/index.html" target="_blank">Contact Form</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/it_service_desk/index.html" target="_blank">IT Service Desk</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/knowledge_base/index.html" target="_blank">Knowledge Base</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/new_starter/index.html" target="_blank">New Starter</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/request_to_be_forgotten/index.html" target="_blank">Request to be forgotten</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/travel_expenses/index.html" target="_blank">Travel Expenses</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/firstReactElement/index.html" target="_blank">First React Element</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+            </ul>
+            <p>The following projects have been completed to further my Knowledge of web design principles.</p>
+            <ul class="skills project_list">
+                <li>
+                    <a href="web_projects/Pets/index.html" target="_blank">Pet Directory</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                
+                <li>
+                    <a href="web_projects/scoreboard/index.html" target="_blank">Scoreboard</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                
+                <li>
+                    <a href="web_projects/lakeTahoe/index.html" target="_blank">Lake Tahoe</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/forSale/index.html" target="_blank">Properties for sale</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/videoStore/index.html" target="_blank">Video Store</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/musicPlaylist/index.html" target="_blank">Music Playlist</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/quiz/index.html" target="_blank">Quiz</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
+                <li>
+                    <a href="web_projects/interactiveWebpage/index.html" target="_blank">Interactive Web Page</a>
+                    <img src="images/hyperlink.png" alt="Hyperlink" class="hyperlink-image">
+                </li>
             </ul>
         </div>
     </main>
@@ -128,6 +189,7 @@
             <li><a href="https://github.com/apstevens" target="_blank" class="social github">Github</a></li>
         </ul>
         <p class="copyright">Copyright 2020, Andy Stevens</p>
+        <a href="#top" class="copyright">Back to top &raquo;</a>
     </footer>
 </body>
 

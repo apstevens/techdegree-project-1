@@ -55,9 +55,20 @@ a:hover {
   color: white
 }
 
+.header-image {
+  background: url('images/space.jpg') no-repeat top center; 
+  height: 470px; 
+  background-size: 100%; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: -1;
+}
+
 header {
   text-align: center;
-  background: url('images/space.jpg') no-repeat top center ;
+  /* background: url('images/space.jpg') no-repeat top center ; */
   background-size: cover;
   overflow: hidden;
   padding-top: 60px;
@@ -70,6 +81,7 @@ header .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  object-fit: cover;
   border: 3px solid white;
   transition: all .5s;
 }
@@ -89,9 +101,9 @@ header .profile-image:hover {
   color: yellow;
 }
 .card {
-  margin: 30px;
+  margin: 30px 10px;
   padding: 20px 40px 40px;
-  max-width: 400px;
+  max-width: 320px;
   text-align: left;
   background: #fff;
   border-bottom: 4px solid #ccc;
@@ -103,7 +115,7 @@ header .profile-image:hover {
 }
 
 .background-image {
-  width: 300px;
+  width: 240px;
   border-radius: 6px;
   border-bottom: 4px solid #ccc;
   transition: all .5s;
@@ -130,6 +142,28 @@ ul.skills {
 .skills li:nth-child(odd) {
   background: #0399ff;
 }
+
+ul.work-experience {
+  padding: 0;
+  text-align: center;
+  list-style-type: disc;
+}
+
+.hyperlink-image {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.work-experience li {
+  text-align: left;
+  width: 200px;
+  line-height: 1.5em;
+  padding: 5px 5px;
+  margin: 2px;
+}
+
 
 .project_list a {
   color: white;
@@ -206,9 +240,20 @@ a.social:hover {
       display: flex; 
       max-width: 1200px;
       -ms-flex-pack: distribute;
-      justify-content: space-around;
+      justify-content: center;
       margin: 0 auto;
   }
+
+  .background-image {
+  width: 240px;
+  border-radius: 6px;
+  border-bottom: 4px solid #ccc;
+  transition: all .5s;
+}
+
+.background-image:hover {
+  border-color: #ff99ff;
+}
 
   header {
     min-height: 470px;

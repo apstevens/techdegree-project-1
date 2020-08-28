@@ -1,0 +1,86 @@
+<script>
+    var datags = <?!= JSON.stringify(data) ?> ;
+    console.log(datags);
+</script>
+<!DOCTYPE html>
+  <html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    
+    /* Base Styles --------------- */
+    h1 {
+      padding-top: 10px;
+    }
+
+    /* Main Styles --------------- */
+    
+    .main-header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+    
+    </style>
+  </head>
+  <body>
+    <div class="primary-content container form-group overflow-hidden"><br>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="filter" placeholder="Search Directory..." aria-label="Search Directory..." aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" id="btnFilter" value="Search &telrec;" type="button">Search &telrec;</button>
+         </div>
+       </div>
+        <form class="form-inline form-group">
+          <table id="myTable" class="table table-striped table-hover table-responsive" style="margin-top: 10px;">
+            <tr>
+                <th class="lead"><strong>First Name</strong></th>
+                <th class="lead"><strong>Last Name</strong></th>
+                <th class="lead"><strong>Service</strong></th>
+                <th class="lead"><strong>Role</strong></th>
+                <th class="lead"><strong>Location</strong></th>
+                <th class="lead"><strong>Desk Phone</strong></th>
+                <th class="lead"><strong>Mobile Phone</strong></th>
+                <th class="lead"><strong>Email</strong></th>
+            </tr>
+          </table>
+      </form>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        function initialize() {
+            jQuery.each(datags, function() {
+                $('#myTable tr:last').after('<tr class="tableWidth" style="font-size: 12px; font-family: arial;"><td>' 
+                + this.firstname + '</td><td>' 
+                + this.lastname + '</td><td>' 
+                + this.service + '</td><td>' 
+                + this.role + '</td><td>' 
+                + this.location + '</td><td>' 
+                + this.deskphone + '</td><td>' 
+                + this.mobilephone + '</td><td>' 
+                + this.email + '</td></tr>'
+                )
+            });
+        }
+
+        function filter() {
+            $("#myTable tr").show();
+            if ($("#filter").val.length > 0) {
+                $("#myTable tr").filter(function(index, elm) {
+                    return $(elm).html().toUpperCase().indexOf($("#filter").val().toUpperCase()) < 0;
+                }).hide();
+            }
+        }
+
+        $(document).ready(
+            function() {
+                initialize();
+                $("#btnFilter").click(filter);
+                setInterval(filter, 1000);
+            }
+        );
+    </script>
+  </body>
+</html>
+
